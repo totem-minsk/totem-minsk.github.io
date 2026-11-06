@@ -12,7 +12,7 @@
 
 - HTML5, CSS3 (переменные, Grid, Flexbox), vanilla JavaScript
 - Без фреймворков, сборщиков и CMS: сайт статический, цены на нём не показываются
-- Шрифты Oswald (заголовки) и Golos Text (текст) подключены локально из `assets/fonts/` (woff2)
+- Шрифты Tektur (заголовки) и Golos Text (текст) подключены локально из `assets/fonts/` (woff2)
 - Карта: Яндекс.Карты (загружается по требованию) и ссылка на Google Maps
 
 ## Структура проекта
@@ -25,7 +25,7 @@
 │   ├── css/style.css     # стили, токены цветов в :root
 │   ├── js/main.js        # меню, окно выбора мессенджера, ленивая карта
 │   ├── img/              # оптимизированные фото (JPEG 600 и 1200 px)
-│   ├── fonts/            # Oswald и Golos Text (woff2)
+│   ├── fonts/            # Tektur и Golos Text (woff2)
 │   └── logo/             # логотип (PNG, нужен SVG) и favicon
 ├── images_totem/         # исходные фото от клиента
 ├── бриф/                 # бриф клиента
