@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# УТОЧНИТЬ: заменить домен после регистрации
+Sitemap: https://totem-sport.by/sitemap.xml
