@@ -100,5 +100,17 @@
     });
   }
 
+  // ---------- Кнопка «Наверх» ----------
+  var toTop = document.querySelector('.to-top');
+  function updateToTop() {
+    toTop.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.8);
+  }
+  window.addEventListener('scroll', updateToTop, { passive: true });
+  updateToTop();
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0 }); // плавность задаёт scroll-behavior в CSS
+    document.querySelector('.logo').focus({ preventScroll: true });
+  });
+
   document.getElementById('year').textContent = new Date().getFullYear();
 })();

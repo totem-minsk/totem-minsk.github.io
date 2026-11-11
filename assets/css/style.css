@@ -604,6 +604,30 @@ p { margin: 0; }
 .fab:hover { transform: scale(1.05); }
 @media (min-width: 1080px) { .fab { display: none; } }
 
+/* ---------- Кнопка «Наверх» ---------- */
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 86px;               /* над плавающей кнопкой связи */
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  width: 48px; height: 48px;
+  padding: 0;
+  border: 1.5px solid var(--c-line);
+  border-radius: 50%;
+  background: rgba(26, 26, 25, .92);
+  color: var(--c-accent);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .25s var(--ease), transform .25s var(--ease), visibility .25s, border-color .2s;
+}
+.to-top.is-visible { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { border-color: var(--c-accent); }
+@media (min-width: 1080px) { .to-top { right: 24px; bottom: 24px; width: 52px; height: 52px; } }
+
 /* ---------- Окно выбора мессенджера ---------- */
 .contact-dialog {
   width: min(440px, calc(100% - 32px));
