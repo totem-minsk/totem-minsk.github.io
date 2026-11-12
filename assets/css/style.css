@@ -537,7 +537,13 @@ p { margin: 0; }
 .contacts__list a:hover { color: var(--c-accent); }
 .contacts__phone { color: var(--c-accent); font: 800 26px/1.2 var(--f-head); }
 
-.messengers, .contact-dialog__list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.messengers, .contact-dialog__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+/* на узких экранах три кнопки в ряд не помещаются: 2 + Instagram во всю ширину */
+@media (max-width: 419px) {
+  .messengers, .contact-dialog__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .messengers .messenger:nth-child(3),
+  .contact-dialog__list .messenger:nth-child(3) { grid-column: 1 / -1; }
+}
 .messenger {
   display: flex;
   align-items: center;
@@ -653,7 +659,7 @@ p { margin: 0; }
 .contact-dialog__title { font-size: 22px; padding-right: 36px; }
 .contact-dialog__text { margin: 12px 0 20px; color: var(--c-muted); font-size: 15px; }
 .contact-dialog__text q { color: var(--c-text); }
-.contact-dialog__list .messenger--phone { grid-column: span 2; background: var(--c-accent); color: var(--c-on-accent); border-color: var(--c-accent); }
+.contact-dialog__list .messenger--phone { grid-column: 1 / -1; background: var(--c-accent); color: var(--c-on-accent); border-color: var(--c-accent); }
 .contact-dialog__list .messenger--phone:hover { background: var(--c-accent-hover); color: var(--c-on-accent); }
 .contact-dialog__hint { margin-top: 16px; color: var(--c-muted); font-size: 13px; }
 .contact-dialog__hint.is-copied { color: var(--c-accent); }
